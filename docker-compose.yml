@@ -1,0 +1,12 @@
+services:
+  db-platform:
+    container_name: pgsql
+    image: postgres:13-alpine3.18
+    ports:
+      - "5439:5432"
+    environment:
+      POSTGRES_DB: app
+      POSTGRES_USER: dbuser
+      POSTGRES_PASSWORD: qwe123
+    volumes:
+      - .volume-pgsql/data:/var/lib/postgresql/data
